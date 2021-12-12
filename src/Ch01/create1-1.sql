@@ -1,0 +1,15 @@
+CREATE TABLE Greatests
+(key	CHAR(1)		NOT NULL,
+ x	INTEGER		NOT NULL,
+ y	INTEGER		NOT NULL,
+ z	INTEGER		NOT NULL,
+ PRIMARY KEY (key));
+
+BEGIN TRANSACTION;
+
+INSERT INTO Greatests VALUES ('A', 1, 2, 3);
+INSERT INTO Greatests VALUES ('B', 5, 5, 2);
+INSERT INTO Greatests VALUES ('C', 4, 7, 1);
+INSERT INTO Greatests VALUES ('D', 3, 3, 8);
+
+COMMIT;

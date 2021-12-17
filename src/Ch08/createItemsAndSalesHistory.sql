@@ -1,0 +1,27 @@
+CREATE TABLE Items2
+(item_no		INTEGER		NOT NULL,
+ item			VARCHAR(10)	,
+ PRIMARY KEY (item_no));
+
+CREATE TABLE SalesHistory
+(salse_date		DATE		NOT NULL,
+ item_no		INTEGER		NOT NULL,
+ quantity		INTEGER		,
+ PRIMARY KEY (salse_date, item_no));
+
+BEGIN TRANSACTION;
+
+INSERT INTO Items2 VALUES (10, 'SDカード');
+INSERT INTO Items2 VALUES (20, 'CD-R');
+INSERT INTO Items2 VALUES (30, 'USBメモリ');
+INSERT INTO Items2 VALUES (40, 'DVD');
+
+INSERT INTO SalesHistory VALUES ('2018-10-01', 10, 4);
+INSERT INTO SalesHistory VALUES ('2018-10-01', 20, 10);
+INSERT INTO SalesHistory VALUES ('2018-10-01', 30, 3);
+INSERT INTO SalesHistory VALUES ('2018-10-03', 10, 32);
+INSERT INTO SalesHistory VALUES ('2018-10-03', 30, 12);
+INSERT INTO SalesHistory VALUES ('2018-10-04', 20, 22);
+INSERT INTO SalesHistory VALUES ('2018-10-04', 30, 7);
+
+COMMIT;

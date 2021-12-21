@@ -1,0 +1,21 @@
+CREATE TABLE Class_A
+(id		INTEGER		NOT NULL,
+ name		VARCHAR(10)	,
+ PRIMARY KEY (id));
+
+CREATE TABLE Class_B
+(id		INTEGER		NOT NULL,
+ name		VARCHAR(10)	,
+ PRIMARY KEY (id));
+
+BEGIN TRANSACTION;
+
+INSERT INTO Class_A VALUES (1, '田中');
+INSERT INTO Class_A VALUES (2, '鈴木');
+INSERT INTO Class_A VALUES (3, '伊集院');
+
+INSERT INTO Class_B VALUES (1, '田中');
+INSERT INTO Class_B VALUES (2, '鈴木');
+INSERT INTO Class_B VALUES (4, '西園寺');
+
+COMMIT;

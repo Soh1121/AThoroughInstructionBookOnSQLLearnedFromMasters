@@ -1,0 +1,25 @@
+CREATE TABLE tbl_A
+(key		CHAR(1)		NOT NULL,
+ col_1		INTEGER		,
+ col_2		INTEGER		,
+ col_3		INTEGER		,
+ PRIMARY KEY (key));
+
+CREATE TABLE tbl_B
+(key		CHAR(1)		NOT NULL,
+ col_1		INTEGER		,
+ col_2		INTEGER		,
+ col_3		INTEGER		,
+ PRIMARY KEY (key));
+
+BEGIN TRANSACTION;
+
+INSERT INTO tbl_A VALUES ('A', 2, 3, 4);
+INSERT INTO tbl_A VALUES ('B', 0, 7, 9);
+INSERT INTO tbl_A VALUES ('C', 5, 1, 6);
+
+INSERT INTO tbl_B VALUES ('A', 2, 3, 4);
+INSERT INTO tbl_B VALUES ('B', 0, 7, 9);
+INSERT INTO tbl_B VALUES ('C', 5, 1, 6);
+
+COMMIT;
